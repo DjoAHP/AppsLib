@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f1115" />
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <title>AppsLib</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+
+<body>
+    <header>
+        <h1>AppsLib</h1>
+        <input type="search" id="searchInput" placeholder="Rechercher..." />
+    </header>
+
+    <main class="library" id="library">
+        <div class="card" data-name="ColleBox" data-category="Outils">
+            <img src="./icons/64x64_ColleBox.png" alt="ColleBox" />
+            <h2>ColleBox</h2>
+            <div class="category">Outils</div>
+        </div>
+
+        <div class="card" data-name="ResineBox" data-category="Résine">
+            <img src="./icons/64x64_ResineBox.png" alt="ResineBox" />
+            <h2>ResineBox</h2>
+            <div class="category">Résine</div>
+        </div>
+
+        <div class="card" data-name="SlaveCraft" data-category="Lutherie">
+            <img src="./icons/64x64_SlaveCraft.png" alt="SlaveCraft" />
+            <h2>SlaveCraft</h2>
+            <div class="category">Lutherie</div>
+        </div>
+
+        <div class="card" data-name="TodoWood" data-category="Lutherie">
+            <img src="./icons/64x64_TodoWood.png" alt="TodoWood" />
+            <h2>TodoWood</h2>
+            <div class="category">Lutherie</div>
+        </div>
+
+        <div class="card" data-name="VignoblePro" data-category="Vignoble">
+            <img src="./icons/64x64_VignoblePro.png" alt="VignoblePro" />
+            <h2>VignoblePro</h2>
+            <div class="category">Vignoble</div>
+        </div>
+
+        <div class="card" data-name="StudyPicture" data-category="Dessin">
+            <img src="./icons/64x64_StudyPicture.png" alt="StudyPicture" />
+            <h2>StudyPicture</h2>
+            <div class="category">Dessin</div>
+        </div>
+
+        <div class="card" data-name="Study3D" data-category="Dessin">
+            <img src="./icons/64x64_Study3D.png" alt="Study3D" />
+            <h2>Study3D</h2>
+            <div class="category">Dessin</div>
+        </div>
+
+        <div class="card" data-name="HotDraw" data-category="Dessin">
+            <img src="./icons/64x64_HotDraw.png" alt="HotDraw" />
+            <h2>HotDraw</h2>
+            <div class="category">Dessin</div>
+        </div>
+
+        <div class="card" data-name="GalerieArt" data-category="Art">
+            <img src="./icons/64x64_GalerieArt.png" alt="GalerieArt" />
+            <h2>Galerie d'art</h2>
+            <div class="category">Art</div>
+        </div>
+    </main>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.card');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            cards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const category = card.dataset.category.toLowerCase();
+                card.style.display = (name.includes(query) || category.includes(query)) ? 'block' : 'none';
+            });
+        });
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const appName = card.dataset.name;
+                if (appName === 'ColleBox') window.open('https://colle-box.base44.app', '_blank');
+                if (appName === 'ResineBox') window.open('https://resinebox-calculateur.netlify.app/', '_blank');
+                if (appName === 'SlaveCraft') window.open('https://stave-craft-5649e969.base44.app', '_blank');
+                if (appName === 'TodoWood') window.open('https://wood-craft-todo.lovable.app', '_blank');
+                if (appName === 'VignoblePro') window.open('https://vignoble-pro-28c26999.base44.app', '_blank');
+                if (appName === 'StudyPicture') window.open('https://jocular-empanada-da2a4d.netlify.app', '_blank');
+                if (appName === 'Study3D') window.open('https://3d-for-study.netlify.app', '_blank');
+                if (appName === 'HotDraw') window.open('https://harmonious-axolotl-cec9d2.netlify.app', '_blank');
+                if (appName === 'GalerieArt') window.open('https://ma-galerie-dart.netlify.app', '_blank');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+</body>
+
+</html>
